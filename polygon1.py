@@ -1,0 +1,17 @@
+import numpy as np
+import cv2
+a = np.array([[[100,200], [305,105], [100,25]]], dtype = np.int32)
+b = np.array([[[110,190], [295,105], [110,35]]], dtype = np.int32)
+#b = np.array([[[86,192], [100,150], [102,75]]], dtype = np.int32)
+c = np.array([[[200,260], [160,100], [201,300]]], dtype = np.int32)
+d = np.array([[[150,100], [50,60], [300,60]]], dtype = np.int32)
+e = np.array([[[260,200], [150,60], [80,100]]], dtype = np.int32)
+#print(a.shape)
+im = np.zeros([360, 360], dtype = np.uint8)
+cv2.polylines(im, a, 1, 255)
+cv2.polylines(im, b, 1, 255)
+cv2.polylines(im, c, 1, 255)
+cv2.polylines(im, d, 1, 255)
+cv2.polylines(im, e, 1, 255)
+#cv2.fillPoly(im, b, 255)
+cv2.imwrite("polygon.jpg", im)
